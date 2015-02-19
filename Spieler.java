@@ -8,6 +8,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class Spieler extends Actor
 {
+    GreenfootSound schlag = new GreenfootSound("Schlag.wav");
     Mauer mauer;
     Kiste kiste;
     /**
@@ -39,8 +40,11 @@ public class Spieler extends Actor
                     }
                 }
             }
+            else
+            {
+                schlag.play();
+            }
         }
-
         else if(Greenfoot.isKeyDown("left"))
         {
             int x=-1;
@@ -61,6 +65,10 @@ public class Spieler extends Actor
                         setLocation(getX()+x,getY()+y);
                     }
                 }
+            }
+            else
+            {
+                schlag.play();
             }
         }
         else if(Greenfoot.isKeyDown("right"))
@@ -84,6 +92,10 @@ public class Spieler extends Actor
                     }
                 }
             }
+            else
+            {
+                schlag.play();
+            }
         }
         else if(Greenfoot.isKeyDown("down"))
         {
@@ -105,6 +117,10 @@ public class Spieler extends Actor
                         setLocation(getX()+x,getY()+y);
                     }
                 }
+            }
+            else
+            {
+                schlag.play();
             }
         }    
     }
